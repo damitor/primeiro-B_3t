@@ -3,4 +3,4 @@ terceiro trimeztre
 
 damila maria silva da rocha n 10
 conteudo
-html,css,javSCRIPT
+html,css,javscript
