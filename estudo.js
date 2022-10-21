@@ -1,4 +1,4 @@
-let tabuada = 111;
+let tabuada = 23;
 function escreva(){
     document.write("Tabuada do " + tabuada + "<br>");
     document.write(tabuada + " x 1 = " + (tabuada*1) + "<br>");
@@ -22,7 +22,7 @@ function mostraLista(){
     }
 }
 
-function multiplica(){ 
+function multiplica(){
     for(let i = 6; i <= 8; i++){
         document.write("Tabuada do " + i + "<br>");
         for(let j = 1; j <= 10; j++){
@@ -31,17 +31,53 @@ function multiplica(){
         document.write("<br>");
     }
 }
-
 function total(){
-    let v = document.getElementById("valor").value;
-    let j = document.getElementById("juros").value;
-    let t = document.getElementById("meses").value;
-    let r = 0;
-    for(let i=1; i <= t;i++){
-         r = v * (1+(j/100));
-         
-         v = r;
-    }
+   let v = document.getElementById("valor").value;
+   let j = document.getElementById("juros").value;
+   let t = document.getElementById("meses").value;
+   let r = 0;
+   for(let i=1; i<= t;i++){
+     r = v * (1+(j/100));
+     
+     v = r;
+   }
     
-    document.write("resultado: " + r);
+    document.write("Resultado: " + r);
+
 }
+function media(){
+let n1 = document.getElementById("n1").value;
+let n2 = document.getElementById("n2").value;
+let n3 = document.getElementById("n3").value;
+let n4 = document.getElementById("n4").value;
+
+let r = (Number(n1)+Number(n2)+Number(n3)+Number(n4))/4;
+document.getElementById("result").innerHTML = "Média:" + r;
+}
+function soma(){
+    let n1 = document.getElementById("n1").value;
+    let n2 = document.getElementById("n2").value;
+    let n3 = document.getElementById("n3").value;
+    let n4 = document.getElementById("n4").value;
+    
+    let r = (Number(n1)+Number(n2)+Number(n3)+Number(n4));
+    document.getElementById("result").innerHTML = "Somar:" + r;
+    }
+    function Multiplicar(){
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+        let n3 = document.getElementById("n3").value;
+        let n4 = document.getElementById("n4").value;
+        
+        let r = (Number(n1)*Number(n2)*Number(n3)*Number(n4));
+        document.getElementById("result").innerHTML = "Multiplicar:" + r;
+        }
+        function Dividir(){
+            let n1 = document.getElementById("n1").value;
+            let n2 = document.getElementById("n2").value;
+            let n3 = document.getElementById("n3").value;
+            let n4 = document.getElementById("n4").value;
+            
+            let r = (Number(n1)/Number(n2)/Number(n3)/Number(n4));
+            document.getElementById("result").innerHTML = "Dividir:" + r;
+            }
