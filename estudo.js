@@ -1,4 +1,4 @@
-let tabuada = 23;
+let tabuada = 111;
 function escreva(){
     document.write("Tabuada do " + tabuada + "<br>");
     document.write(tabuada + " x 1 = " + (tabuada*1) + "<br>");
@@ -31,53 +31,48 @@ function multiplica(){
         document.write("<br>");
     }
 }
+function moeda(atual){
+    return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+}
 function total(){
-   let v = document.getElementById("valor").value;
-   let j = document.getElementById("juros").value;
-   let t = document.getElementById("meses").value;
-   let r = 0;
-   for(let i=1; i<= t;i++){
-     r = v * (1+(j/100));
-     
-     v = r;
-   }
+    let v = document.getElementById("valor").value;
+    let j = document.getElementById("juros").value;
+    let t = document.getElementById("meses").value;
     
-    document.write("Resultado: " + r);
-
-}
-function media(){
-let n1 = document.getElementById("n1").value;
-let n2 = document.getElementById("n2").value;
-let n3 = document.getElementById("n3").value;
-let n4 = document.getElementById("n4").value;
-
-let r = (Number(n1)+Number(n2)+Number(n3)+Number(n4))/4;
-document.getElementById("result").innerHTML = "Média:" + r;
-}
-function soma(){
-    let n1 = document.getElementById("n1").value;
-    let n2 = document.getElementById("n2").value;
-    let n3 = document.getElementById("n3").value;
-    let n4 = document.getElementById("n4").value;
-    
-    let r = (Number(n1)+Number(n2)+Number(n3)+Number(n4));
-    document.getElementById("result").innerHTML = "Somar:" + r;
+    if(!Number(v)){
+        alert("O valor deve ser numérico.");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
     }
-    function Multiplicar(){
-        let n1 = document.getElementById("n1").value;
-        let n2 = document.getElementById("n2").value;
-        let n3 = document.getElementById("n3").value;
-        let n4 = document.getElementById("n4").value;
-        
-        let r = (Number(n1)*Number(n2)*Number(n3)*Number(n4));
-        document.getElementById("result").innerHTML = "Multiplicar:" + r;
-        }
-        function Dividir(){
-            let n1 = document.getElementById("n1").value;
-            let n2 = document.getElementById("n2").value;
-            let n3 = document.getElementById("n3").value;
-            let n4 = document.getElementById("n4").value;
-            
-            let r = (Number(n1)/Number(n2)/Number(n3)/Number(n4));
-            document.getElementById("result").innerHTML = "Dividir:" + r;
-            }
+
+    if(!Number(v)){
+        alert("O valor deve ser numérico.");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
+    }
+    if(!Number(j)){
+        alert("Os juros devem ser numérico.");
+        document.getElementById("juros").value = "";
+        document.getElementById("juros").focus();
+        return
+    }
+    if(!Number(t)){
+        alert("O valor dos meses deve ser numérico.");
+        document.getElementById("meses").value = "";
+        document.getElementById("meses").focus();
+        return
+    }
+
+    let r = 0;
+    for(let i=1; i <= t;i++){
+         r = v * (1+(j/100));
+         ocument.getElementById("mes").innerHTML="mes" + i + "valor:" + moeda(r) + "<br>";
+         v = r;
+    }
+    document.getElementById("mes").innerHTML=texto;
+    document.getElementById("totalGeral").innerHTML="total: "+moeda(r);
+    
+    
+
