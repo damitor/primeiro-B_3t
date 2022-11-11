@@ -75,4 +75,15 @@ function total(){
     document.getElementById("totalGeral").innerHTML="total: "+moeda(r);
     
     
+let a = 5; 
+let b = -1;
+let c = -6;//5x2 - x - 6 =0;
+ function calcularRaiz(){
+    let delta = (b*b)-(4*a*c);
+    if (delta < 0){
 
+    }else{
+        raiz_quadrada = math.sqrt(delta);
+    }
+    document.getElementById("raiz").innerHTML = delta + " raiz " +
+}
